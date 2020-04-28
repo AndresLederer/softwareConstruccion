@@ -22,5 +22,12 @@ public class ObraDomestica extends Obra{
 		setRooms(rooms);
 	}
 	
+	//toString @Override
+	@Override
+	public String toString() {
+		String string = super.toString();
+		string += String.format("Rooms: %d",getRooms());
+		return string;
+	}
 	
 }

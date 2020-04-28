@@ -21,5 +21,13 @@ public class ObraComercial extends Obra {
 		super(address,totalSquareMts,estimatedDays,squareMtPrice,employees);
 		setBuildingName(buildingName);
 	}
+	
+	//toString @Override
+	@Override
+	public String toString() {
+		String string = super.toString();
+		string += String.format("Building name: %s/n",getBuildingName());
+		return string;
+	}
 }
 

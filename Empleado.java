@@ -39,4 +39,12 @@ public abstract class Empleado {
 		setTel(tel);
 		this.paymentPerDay = paymetPerDay;
 	}
+	
+	//methods
+	//toString() @Override
+	@Override 
+	public String toString() {
+		String string = String.format("Full name: %s\nPersonal ID: %s\nTel: 5s\nPayment per day: %.2f\n",getName(),getPersonalIdNum(),getTel(),getPaymentPerDay());
+		return string;
+	}
 }

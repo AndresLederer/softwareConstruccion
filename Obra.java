@@ -24,7 +24,11 @@ public abstract class Obra {
 		this.squareMtPrice = squareMtPrice;
 	}
 	public void setEmployees(ArrayList <Empleado> employees) {
-		this.employees = employees;
+//		if(checkEmployees(employees)) {
+			this.employees = employees;
+//		}else {
+//			System.out.println("Chequear cantidad y tipos de empleados asignados a la obra");
+//		}
 	}
 	
 	//getters
@@ -61,7 +65,7 @@ public abstract class Obra {
 		return finalPrice;
 	}
 	
-	//returns the employees cost per building day
+	//returns the employees cost per day
 	private double employeesCostPerDay() {
 		double costPerDay = 0;
 		for(Empleado e : employees) {
@@ -69,6 +73,30 @@ public abstract class Obra {
 		}
 		return costPerDay;
 	}
+	
+	//toString @Override
+	@Override
+	public String toString() {
+		String string = String.format("Buildind address: %s\nTotal square mts: %.2f\nEstimated days: %d\nSquare mt price: $%.2f\n",getAddress(),getTotalSquareMts(),getEstimatedDays(),getsquareMtPrice());
+		return string;
+	}
+	
+//	//returns a String with all the employees data
+//	private String allEmployeesInString() {
+//		String allEmployeesData = null;
+//		for(Empleado e : employees) {
+//			if(e instanceof Arquitecto) {
+//				allEmployeesData += ((Arquitecto) e).toString();
+//			}
+//			if(e instanceof MaestroMayor) {
+//				allEmployeesData += ((MaestroMayor) e).toString();
+//			}
+//			if(e instanceof Obrero) {
+//				allEmployeesData += ((Obrero) e).toString();
+//			}
+//		}
+//		return allEmployeesData;
+//	}
 }
 
 

@@ -22,4 +22,11 @@ public class Comercio extends ObraComercial{
 		setEntry(entry);
 	}
 	
+	//toString @Override
+	@Override
+	public String toString() {
+		String string = super.toString();
+		string += String.format("Entry: %s\n",getEntry());
+		return string;
+	}
 }

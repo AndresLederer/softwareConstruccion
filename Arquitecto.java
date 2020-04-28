@@ -20,4 +20,10 @@ public class Arquitecto extends Empleado{
 		System.out.println("I'm an architect designing my next plans");
 	}
 	
+	//toString() @Override
+	@Override
+	public String toString() {
+		String string = super.toString() + String.format("Registration number: %d",getRegistrationNumber());
+		return string;
+	}
 }

@@ -21,4 +21,12 @@ public class Hotel extends ObraComercial{
 		super(address,totalSquareMts,estimatedDays,squareMtPrice,employees,buildingName);
 		setFloors(floors);
 	}
+	
+	//toString @Override
+	@Override
+	public String toString() {
+		String string = super.toString();
+		string += String.format("Floors: %d/n",getFloors());
+		return string;
+	}
 }

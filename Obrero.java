@@ -22,9 +22,16 @@ public class Obrero extends Empleado implements Construccion{
 	
 	//methods
 	
-	//Construccion interface @Override
+	//Construccion interface method @Override
 	@Override
 	public void work() {
 		System.out.println("I'm a worker and I build");
+	}
+	
+	//toString() @Override
+	@Override
+	public String toString() {
+		String string = super.toString() + String.format("Age: %d",getAge());
+		return string;
 	}
 }
