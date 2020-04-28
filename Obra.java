@@ -8,7 +8,7 @@ public abstract class Obra {
 	private double totalSquareMts;
 	private int estimatedDays;
 	private double squareMtPrice;
-	private ArrayList <Empleado> employees;
+	private ArrayList <Empleado> employees = new ArrayList<Empleado>(); //POR OBRA: 1 arq , 1 a 3 mm, 2 o más obr 
 	
 	//setters
 	public void setAddress(String address) {
@@ -24,11 +24,11 @@ public abstract class Obra {
 		this.squareMtPrice = squareMtPrice;
 	}
 	public void setEmployees(ArrayList <Empleado> employees) {
-//		if(checkEmployees(employees)) {
-			this.employees = employees;
-//		}else {
-//			System.out.println("Chequear cantidad y tipos de empleados asignados a la obra");
-//		}
+		if(checkEmpleadosPorObra(employees)) {
+			this.employees = employees; //la cantidad y tipo de empleados asigandos es correcta
+		}else { //hay que chequear la cantidad y tipos de empleados asignados a esta obra
+			System.out.println("Employees couldn't been assignated. Check the number and profesion of all assignated employees");
+		}
 	}
 	
 	//getters
@@ -59,6 +59,39 @@ public abstract class Obra {
 	
 	//methods
 	
+	//shows all the employees working on the building
+	public void showBuildingEmployees(){
+		for(Empleado e : employees) {
+			if(e instanceof Arquitecto) {
+				System.out.println(((Arquitecto) e).toString());
+			}
+			if(e instanceof MaestroMayor) {
+				System.out.println(((MaestroMayor) e).toString());
+			}
+			if(e instanceof Obrero) {
+				System.out.println(((Obrero) e).toString());
+			}
+			System.out.println("------------------------------------------------------------");
+		}
+	}
+	
+	//checks type and number of employees(Empleado)
+	private boolean checkEmpleadosPorObra(ArrayList<Empleado> employees) {
+		boolean check = false;
+		int arq = 0;
+		int mm = 0;
+		int obr = 0;
+		for(Empleado e: employees) {
+			if(e instanceof Arquitecto) arq++;
+			if(e instanceof MaestroMayor) mm++;
+			if(e instanceof Obrero) obr++;
+		}
+		if(arq==1 && mm>=1 && mm<=3 && obr>=2) {
+			check = true;
+		}
+		return check;
+	}
+	
 	//returns the construction final price
 	public double getFinalPrice() {
 		double finalPrice = (squareMtPrice * totalSquareMts)+(estimatedDays * employeesCostPerDay());
@@ -80,23 +113,6 @@ public abstract class Obra {
 		String string = String.format("Buildind address: %s\nTotal square mts: %.2f\nEstimated days: %d\nSquare mt price: $%.2f\n",getAddress(),getTotalSquareMts(),getEstimatedDays(),getsquareMtPrice());
 		return string;
 	}
-	
-//	//returns a String with all the employees data
-//	private String allEmployeesInString() {
-//		String allEmployeesData = null;
-//		for(Empleado e : employees) {
-//			if(e instanceof Arquitecto) {
-//				allEmployeesData += ((Arquitecto) e).toString();
-//			}
-//			if(e instanceof MaestroMayor) {
-//				allEmployeesData += ((MaestroMayor) e).toString();
-//			}
-//			if(e instanceof Obrero) {
-//				allEmployeesData += ((Obrero) e).toString();
-//			}
-//		}
-//		return allEmployeesData;
-//	}
 }
 
 

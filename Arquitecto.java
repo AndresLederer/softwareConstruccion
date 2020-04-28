@@ -23,7 +23,7 @@ public class Arquitecto extends Empleado{
 	//toString() @Override
 	@Override
 	public String toString() {
-		String string = super.toString() + String.format("Registration number: %d",getRegistrationNumber());
+		String string = super.toString() + String.format("Registration number: %d\nProfesion: ARCHITECT",getRegistrationNumber());
 		return string;
 	}
 }

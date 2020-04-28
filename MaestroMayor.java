@@ -32,7 +32,7 @@ public class MaestroMayor extends Empleado implements Construccion{
 	//toString() @Override
 	@Override 
 	public String toString() {
-		String string = super.toString() + String.format("Age: %d",getAge());
+		String string = super.toString() + String.format("Age: %d\nProfesion: CONSTRUCTION MASTER",getAge());
 		return string;
 	}
 	

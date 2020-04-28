@@ -28,8 +28,25 @@ public class Empresa {
 	}
 	
 	//constructor
-	public Empresa(String companyName) {
+	public Empresa(String companyName,ArrayList<Empleado> companyEmployees,ArrayList<Obra> companyBuildings) {
 		this.companyName = companyName;
-		setCompanyBuildings(new ArrayList<Obra>());
+		setCompanyEmployees(companyEmployees);
+		setCompanyBuildings(companyBuildings);
+	}
+		
+	public void showBuildingsAndFinalPrices() {
+		int contador = 1;
+		for(Obra o : companyBuildings) {
+			if(o instanceof ObraDomestica) {
+				System.out.println(String.format("%d) Obra Domestica - Final price: $%.2f",contador,o.getFinalPrice()));
+			}
+			if(o instanceof Hotel) {
+				System.out.println(String.format("%d) Hotel - Final price: $%.2f",contador,o.getFinalPrice()));
+			}
+			if(o instanceof Comercio) {
+				System.out.println(String.format("%d) Comercio - Final price: $%.2f",contador,o.getFinalPrice()));
+			}
+			contador++;
+		}
 	}
 }

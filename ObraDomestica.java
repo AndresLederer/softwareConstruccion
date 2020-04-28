@@ -26,7 +26,7 @@ public class ObraDomestica extends Obra{
 	@Override
 	public String toString() {
 		String string = super.toString();
-		string += String.format("Rooms: %d",getRooms());
+		string += String.format("Rooms: %d\n",getRooms());
 		return string;
 	}
 	

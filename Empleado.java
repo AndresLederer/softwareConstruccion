@@ -44,7 +44,7 @@ public abstract class Empleado {
 	//toString() @Override
 	@Override 
 	public String toString() {
-		String string = String.format("Full name: %s\nPersonal ID: %s\nTel: 5s\nPayment per day: %.2f\n",getName(),getPersonalIdNum(),getTel(),getPaymentPerDay());
+		String string = String.format("Full name: %s\nPersonal ID: %s\nTel: %s\nPayment per day: %.2f\n",getName(),getPersonalIdNum(),getTel(),getPaymentPerDay());
 		return string;
 	}
 }
