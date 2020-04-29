@@ -114,24 +114,3 @@ public abstract class Obra {
 		return string;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
