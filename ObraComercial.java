@@ -2,7 +2,7 @@ package softwareParaLaConstruccion;
 
 import java.util.*;
 
-public class ObraComercial extends Obra {
+public abstract class ObraComercial extends Obra {
 	//atributes
 	private String buildingName;
 	
